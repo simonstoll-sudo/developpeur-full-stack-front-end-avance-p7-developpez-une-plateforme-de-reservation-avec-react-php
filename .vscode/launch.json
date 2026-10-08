@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "API Kasa (PHP, Xdebug)",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "pathMappings": {}
+    },
+    {
+      "name": "Web Kasa (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Kasa : API + Web",
+      "configurations": ["API Kasa (PHP, Xdebug)", "Web Kasa (Chrome)"]
+    }
+  ]
+}

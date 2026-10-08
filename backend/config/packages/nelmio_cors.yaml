@@ -1,0 +1,10 @@
+# Le CORS n'autorise que l'origine du front, définie par CORS_ALLOW_ORIGIN.
+nelmio_cors:
+    defaults:
+        origin_regex: true
+        allow_origin: ['%env(CORS_ALLOW_ORIGIN)%']
+        allow_methods: ['GET', 'POST', 'OPTIONS']
+        allow_headers: ['Content-Type']
+        max_age: 3600
+    paths:
+        '^/api/': null

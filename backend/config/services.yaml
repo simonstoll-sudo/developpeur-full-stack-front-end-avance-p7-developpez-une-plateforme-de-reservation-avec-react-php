@@ -1,0 +1,20 @@
+parameters:
+    # Chemin absolu du fichier de données, construit depuis la racine du projet et DATA_FILE
+    app.chemin_fichier_donnees: '%kernel.project_dir%/%env(DATA_FILE)%'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/Kernel.php'
+            - '../src/Donnees/Utilisateur.php'
+            - '../src/Donnees/Logement.php'
+            - '../src/Donnees/JeuDeDonnees.php'
+
+    App\Donnees\ChargeurCsv:
+        arguments:
+            $cheminFichier: '%app.chemin_fichier_donnees%'
