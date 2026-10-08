@@ -1,0 +1,48 @@
+{
+  "name": "kasa/api",
+  "description": "API de la plateforme Kasa : logements et connexion",
+  "type": "project",
+  "license": "proprietary",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.5",
+    "ext-ctype": "*",
+    "ext-iconv": "*",
+    "nelmio/cors-bundle": "^2.5",
+    "symfony/console": "7.4.*",
+    "symfony/dotenv": "7.4.*",
+    "symfony/framework-bundle": "7.4.*",
+    "symfony/runtime": "7.4.*",
+    "symfony/yaml": "7.4.*"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.75",
+    "phpstan/phpstan": "^2.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "scripts": {
+    "lint": [
+      "phpstan analyse",
+      "php-cs-fixer fix --dry-run --diff"
+    ],
+    "format": "php-cs-fixer fix"
+  },
+  "extra": {
+    "symfony": {
+      "require": "7.4.*",
+      "allow-contrib": false
+    }
+  }
+}
